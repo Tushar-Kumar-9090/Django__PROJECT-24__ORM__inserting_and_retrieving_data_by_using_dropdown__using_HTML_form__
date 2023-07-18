@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Retrieving The Data of webpage</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="topic"><b>Topic_Name</b></label>
+            <select name="topic" multiple>
+                {% for to in LTO %}
+                <option value="{{to}}"> {{to.topic_name}} </option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <input type="submit" value="Retrieve_webpage" id="submit">
+        
+
+
+        </form>
+
+
+
+
+
+    </center>
+
+
+</body>
+</html>

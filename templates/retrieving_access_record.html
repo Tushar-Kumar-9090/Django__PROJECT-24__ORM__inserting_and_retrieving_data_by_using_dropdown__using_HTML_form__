@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Retrieving The Data of access_record</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="webpage"><b>Name</b></label>
+            <select name="webpage" multiple>
+                {% for wo in LWO %}
+                <option value="{{wo}}"> {{wo.name}} </option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <input type="submit" value="Retrieve_access_record" id="submit">
+        
+
+
+        </form>
+
+
+
+
+
+    </center>
+
+
+</body>
+</html>
